@@ -1,0 +1,29 @@
+
+	// Send the body with the post request with content type as JSON
+	
+	// Sending JSON data directly from test method
+	
+	@Test
+	public void postusingJSON()
+	{
+		
+		JSONObject body = new JSONObject();
+		body.put("name", "deghbn");
+		body.put("salary", "4567");
+		body.put("age", "30");
+		
+		RestAssured.given()
+		.baseUri("https://dummy.restapiexample.com/api/v1")
+		.contentType(ContentType.JSON)
+		.body(body)
+		.when().post("/create")
+		.then()
+		.statusCode(200)
+		.log().all();
+		
+		
+		
+		
+	}
+
+}
