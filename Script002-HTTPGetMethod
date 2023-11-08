@@ -1,0 +1,89 @@
+package restassureScripts;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class Script002GetMethod {
+	
+		@Test(enabled = false)
+		public void httpGetmethod()
+		{
+			
+			// Writing rest assured code as simple java program
+			// this is httpd get method
+			
+		Response res =	RestAssured.get("https://reqres.in/api/users?page=2"); // you will send a request
+		
+		System.out.println(res.getStatusCode());
+		
+		System.out.println(res.getBody().asString());
+		
+		System.out.println(res.getTime());
+		
+		System.out.println(res.getHeader("Content-Type"));
+		
+		int expectedstatuscode = 200;
+		int Actualstatuscode  = res.getStatusCode();
+		
+		Assert.assertEquals(expectedstatuscode, Actualstatuscode);
+			
+		}
+		
+		@Test
+		public void GetmethodBDDStyle()
+		{
+			// Method Chaining concept for api testing
+			
+			// output of method is an input to another method
+			
+			// driver.manage().window().maxamize();
+			// driver.manage().timeouts().implicitlywait();
+			
+	RestAssured
+	.given()
+	.baseUri("https://reqres.in/api/users")
+	.queryParam("page", "2")
+	.when().get()
+	.then()
+	.statusCode(200) // this method validate if the response status code is 200 or not
+	.log().all(); // fetch the response and print it on console
+	
+	; 
+	
+	
+	
+	
+	
+	// it is validation method
+	// if status code is not 200, it will give an error.
+			
+			
+			
+			
+			
+			
+		}
+		
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
