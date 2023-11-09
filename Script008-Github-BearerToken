@@ -12,7 +12,7 @@ import io.restassured.response.Response;
 public class Script008GITHUBBearerToken {
 
 	
-	@Test(priority='2')
+	@Test(priority='1')
 	public void Authorization_bearertoken()
 	{
 		
