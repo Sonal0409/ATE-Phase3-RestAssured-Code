@@ -58,7 +58,7 @@ public class Script006PostManAPIKey {
 		
 		JsonPath json = new JsonPath(res.asString());
 		
-		System.out.println(json.getString("workspaces[4].nam"));
+		System.out.println(json.getString("workspaces[4]"));
 		
 	}
 	
