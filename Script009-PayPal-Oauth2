@@ -26,8 +26,8 @@ public class Script009PAyPalOauth2 {
 	@Test(priority='1')
 	public void GetAccessToekn()
 	{
-String clientID = "ARusOV9piJu7WnUWqcEFKsaG36cWGUQymrb6zNg67evPQYXwNusFwdphkHSwhtC1vXZ-R4tU1OTmaJGg";
-String clinetsecret = "EJuqVbnoVWwHT7l4dhdRSQCIZDK0HUCUkVeQ51RufPlA4Fp2NIVJPaiB3V-H5mAyJyEXFZlenVyosRWO";
+String clientID = "";
+String clinetsecret = "";
 
 
               Response res = RestAssured.given()
