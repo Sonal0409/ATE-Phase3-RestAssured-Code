@@ -74,3 +74,18 @@
 		.log().all();
 		
 }
+
+
+	@Test(priority='3')
+	public void delete_product()
+	{
+		
+		RestAssured.given()
+		.baseUri("http://localhost:9010")
+		.basePath("/delete-shoe")
+		.queryParam("id", "1020")
+		.when().delete()
+		.then().log().all();
+		
+	}
+	
